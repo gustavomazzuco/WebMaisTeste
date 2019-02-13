@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html ng-app="produtosApp">
+    <head>
+        <title>Produtos</title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    </head>
+    <body>
+
+        <div class="jumbotron">
+            <h2>Produtos</h2>
+
+            <nav aria-label="breadcrumb">
+                <ol class="breadcrumb">
+                    <li class="breadcrumb-item"><a href="#!/listar">Lista</a></li>
+                    <li class="breadcrumb-item"><a href="#!/cadastro">Cadastro</a></li>
+                </ol>
+            </nav>
+
+            <ng-view></ng-view>
+        </div>
+
+        <script src="lib/angular/angular.js"></script>
+        <script src="lib/angular/angular-route.min.js"></script>
+        <script src="lib/angular/angular-locale_pt-br.js"></script>
+        <script src="lib/angular/angular-resource.min.js"></script>
+        <link rel="stylesheet" href="css/app.css">
+        <script src="produtos/app.js"></script>
+        <script src="produtos/cadastro/cadastro.js"></script>
+        <script src="produtos/lista/lista.js"></script>
+        <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.0/css/bootstrap.min.css">
+        <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>
+        <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.0/js/bootstrap.min.js"></script>
+        <script language='JavaScript'>
+            function SomenteNumero(e) {
+                var tecla = (window.event) ? event.keyCode : e.which;
+                if ((tecla > 47 && tecla < 58))
+                    return true;
+                else {
+                    return false;
+                }
+            }
+
+            function SomenteNumeroDecimal(e) {
+                var tecla = (window.event) ? event.keyCode : e.which;
+                if ((tecla > 47 && tecla < 58) || tecla == 46)
+                    return true;
+                else {
+                    return false;
+                }
+            }
+        </script>
+    </body>
+</html>

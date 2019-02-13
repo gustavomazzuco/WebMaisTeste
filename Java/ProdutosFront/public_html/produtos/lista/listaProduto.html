@@ -1,0 +1,33 @@
+<div>
+    <input class="form-control" type="text" ng-model="busca" placeholder="O que voce está buscando?" />
+
+    <table ng-show="produtos.length > 0" class="table">
+        <tr>
+            <th>Código</th>
+            <th>Descrição</th>
+            <th>Preço</th>
+            <th>Comentário</th>
+            <th>Altura</th>
+            <th>Largura</th>
+            <th>Profundidade</th>
+            <th></th>
+            <th></th>
+        </tr>
+
+        <tr ng-repeat="produto in produtos | filter:busca">
+            <td>{{produto.codigo}}</td>
+            <td>{{produto.nome}}</td>
+            <td>{{produto.preco | currency}}</td>
+            <td>{{produto.comentario}}</td>
+            <td>{{produto.altura}}</td>
+            <td>{{produto.largura}}</td>
+            <td>{{produto.profundidade}}</td>
+            <td>
+                <button class="btn btn-primary btn-block" ng-click="editar(produto)">Editar</button>
+            </td>
+            <td>
+                <button class="btn btn-danger btn-block" ng-click="excluir(produto)">Excluir</button>
+            </td>
+        </tr>
+    </table>
+</div>
