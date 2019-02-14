@@ -1,25 +1,34 @@
 package produtos;
 
 import java.io.Serializable;
+import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.Table;
+import javax.validation.constraints.NotNull;
 
 @Entity
 @Table(name = "produtos", schema = "public")
-public class Produto implements Serializable{
-    
+public class Produto implements Serializable {
+
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Integer id;
+    @NotNull
     private Integer codigo;
+    @NotNull
     private String nome;
+    @NotNull
     private Double preco;
+    @NotNull
     private String comentario;
+    @NotNull
     private Double altura;
+    @NotNull
     private Double largura;
+    @NotNull
     private Double profundidade;
 
     public Produto() {
@@ -27,7 +36,7 @@ public class Produto implements Serializable{
 
     public Produto(Integer id, Integer codigo, String nome, Double preco, String comentario, Double altura, Double largura, Double profundidade) {
         this.id = id;
-        
+
         this.codigo = codigo;
         this.nome = nome;
         this.preco = preco;
@@ -44,7 +53,7 @@ public class Produto implements Serializable{
     public void setId(Integer id) {
         this.id = id;
     }
-    
+
     public Integer getCodigo() {
         return codigo;
     }
@@ -101,5 +110,4 @@ public class Produto implements Serializable{
         this.profundidade = profundidade;
     }
 
-    
 }
